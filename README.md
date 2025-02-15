@@ -3,6 +3,10 @@ This repository contains code for the experiments in "R-Fairness: Assessing Fair
 
 To run our experiments first download the Yelp dataset from https://business.yelp.com/data/resources/open-dataset/ and copy the dataset "yelp_academic_dataset_business.json", "yelp_academic_dataset_review" and "yelp_academic_dataset_user.json" on the main directory.
 
+Then run
+
+python prepare_dataset_yelp.py
+
 Reproduce the plot for the Yelp dataset by running
 
 python plot_yelp.py --attribute "years"
