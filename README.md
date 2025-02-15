@@ -6,13 +6,19 @@ To run our experiments first download the Yelp dataset from https://business.yel
 Reproduce the plot for the Yelp dataset by running
 
 python plot_yelp.py --attribute "years"
+
 python plot_yelp.py --attribute "attitude"
+
 python plot_yelp.py --attribute "reviews"
+
 python plot_yelp.py --attribute "fans"
 
 python plot_yelp_kendall.py --attribute "years"
+
 python plot_yelp_kendall.py --attribute "attitude"
+
 python plot_yelp_kendall.py --attribute "reviews"
+
 python plot_yelp_kendall.py --attribute "fans"
 
 The plot will be saved into the directory "data_boxplot"
