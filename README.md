@@ -25,7 +25,7 @@ The plot will be saved into the directory "data_boxplot"
 
 The Amazon dataset will be provided upon request
 
-The old plots for the old version of Yelp dataset can be found in the directory "Yelp_old_plot" 
+The old plots for the old version of Yelp dataset can be found in the directory "yelp_old_plot" 
 
 
 
