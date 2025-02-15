@@ -19,7 +19,7 @@ def exposure_avg(df):
 
     return exp_avg
 
-def exposure_top(df):
+def exposure_ratio(df):
     """Compute exposure avg"""
     list_position = df["position"].tolist()
     exp = 0
@@ -32,13 +32,13 @@ def exposure_top(df):
     for pos in range(len(list_position)):
         den += 1/math.log(pos+2, 2)
 
-    exp_top = num/den
+    exp_ratio = num/den
 
-    return exp_top
+    return exp_ratio
 
-def treatment_top(df):
-    """Compute treatment top"""
-    exp_top = exposure_top(df)
+def treatment_ratio(df):
+    """Compute treatment ratio"""
+    exp_ratio = exposure_ratio(df)
 
     list_utility = df["utility"].tolist()
     
@@ -48,13 +48,13 @@ def treatment_top(df):
 
     mean_utility = sum_utility / len(list_utility)
 
-    treatment_top = exp_top / mean_utility
+    treatment_ratio = exp_ratio / mean_utility
 
-    return treatment_top
+    return treatment_ratio
 
 def treatment_avg(df):
     """Compute treatment avg"""
-    exp_top = exposure_avg(df)
+    exp_ratio = exposure_avg(df)
 
     list_utility = df["utility"].tolist()
     
@@ -64,9 +64,9 @@ def treatment_avg(df):
 
     mean_utility = sum_utility / len(list_utility)
 
-    treatment_top = exp_top / mean_utility
+    treatment_ratio = exp_ratio / mean_utility
 
-    return treatment_top
+    return treatment_ratio
 
 def kendall_tau_asymmetric(g1_df, g2_df):
     """Compute Kendall Tau distance"""
@@ -101,31 +101,6 @@ def kendall_tau_asymmetric(g1_df, g2_df):
 
     return distance
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def demographic_parity(rank_list):
     """Compute demographic parity"""
     result = 0
@@ -133,7 +108,6 @@ def demographic_parity(rank_list):
         result += 1/math.log(rank+1, 2)
 
     return result
-
 
 def disparate_impact(rank_list, utility_list):
     """Compute Disparate impact"""
@@ -243,3 +217,6 @@ def kendall_tau_negative(g1_df, g2_df):
     distance = distance / normalisation_factor
 
     return distance
+
+
+    
